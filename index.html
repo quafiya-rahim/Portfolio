@@ -2,347 +2,310 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quafiya Rahim — Data Analyst Portfolio</title>
-  <meta name="description" content="Portfolio of Quafiya Rahim — B.Com graduate & Certified Data Analyst" />
   <style>
     :root{
-      --accent-1: #7b61ff; /* purple */
-      --accent-2: #ff5c7c; /* pink */
-      --bg-1: #0b0f1a; /* deep navy */
+      --bg1: #0f1724; /* deep navy */
+      --bg2: #111827; /* near black */
+      --accent1: linear-gradient(90deg,#6ee7b7,#60a5fa,#a78bfa); /* colorful gradient */
       --card: rgba(255,255,255,0.04);
-      --glass: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.03);
       --text: #e6eef8;
-      --muted: #9fb1d4;
-      --glass-border: rgba(255,255,255,0.06);
+      --muted: #9fb0c8;
+      --accent-color: #7c3aed;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background: linear-gradient(135deg,var(--bg-1), #071028 60%); color:var(--text);}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background: radial-gradient(circle at 10% 10%, rgba(124,58,237,0.14), transparent 10%), linear-gradient(180deg,var(--bg1),var(--bg2)); color:var(--text);}
 
-    /* Layout */
-    header{position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,15,26,0.6), rgba(11,15,26,0.2));backdrop-filter: blur(6px);border-bottom:1px solid var(--glass-border);} 
-    .container{max-width:1100px;margin:0 auto;padding:110px 20px 60px}
-    nav{display:flex;align-items:center;gap:24px;padding:18px 24px}
+    /* Header / Nav */
+    header{position:fixed;top:0;left:0;right:0;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-bottom:1px solid rgba(255,255,255,0.03); z-index:1000}
+    .container{max-width:1100px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    .navlinks{margin-left:auto;display:flex;gap:18px}
-    .navlinks a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-    .navlinks a.active, .navlinks a:hover{color:var(--text);background:linear-gradient(90deg, rgba(123,97,255,0.12), rgba(255,92,124,0.06));}
+    .logo{width:46px;height:46px;border-radius:10px;background:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:0.6px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a:hover, nav a.active{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:14px;border:1px solid var(--glass-border);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
-    h1{margin:0;font-size:28px;letter-spacing:0.2px}
-    p.lead{color:var(--muted);line-height:1.6;margin-top:10px}
+    main{padding-top:92px;padding-bottom:80px}
+    .hero{max-width:1100px;margin:24px auto;padding:28px;border-radius:16px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.6);display:grid;grid-template-columns:1fr 360px;gap:24px}
+    .hero .about-card{padding:22px}
+    h1{margin:0 0 8px 0;font-size:26px}
+    p.lead{margin:0;color:var(--muted);line-height:1.55}
 
-    /* Photo card */
-    .photo-uploader{display:flex;flex-direction:column;align-items:center;gap:12px}
-    .avatar{width:320px;height:320px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;border:1px dashed var(--glass-border);overflow:hidden}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .small-btn{background:transparent;border:1px solid var(--glass-border);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+    .profile-card{border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));display:flex;flex-direction:column;gap:14px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:14px;background:linear-gradient(180deg,#6ee7b7,#60a5fa);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#022;}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent-color);color:white;text-decoration:none;font-weight:700}
 
     /* Sections */
-    section{margin-top:28px}
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    section{max-width:1100px;margin:18px auto;padding:20px;border-radius:12px;background:var(--card);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{padding:18px;border-radius:12px;background:var(--glass)}
+    h2{margin:0 0 12px 0}
+    ul.skills{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
+    ul.skills li{margin-bottom:8px}
 
-    h2{margin:0 0 14px 0;font-size:18px;color:var(--text)}
-    .muted{color:var(--muted);font-size:14px}
-    ul{margin:0;padding-left:18px}
-    li{margin-bottom:8px}
+    /* Education table */
+    .edu-table{width:100%;border-collapse:collapse;color:var(--muted)}
+    .edu-table th,.edu-table td{padding:8px 10px;text-align:left}
+    .edu-table tr{border-bottom:1px solid rgba(255,255,255,0.02)}
 
-    /* Skills */
-    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .skill-list{background:var(--card);padding:16px;border-radius:10px;border:1px solid var(--glass-border)}
-
-    /* Education & Achievements */
-    .edu-table{width:100%;border-collapse:collapse}
-    .edu-table td{padding:10px;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    /* Achievements with image upload */
+    .cert-row{display:flex;gap:12px;align-items:center}
+    .cert-preview{width:96px;height:64px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);}
+    .file-input{display:flex;flex-direction:column;gap:8px}
 
     /* Footer */
-    footer{margin-top:40px;padding:24px;border-top:1px solid var(--glass-border);display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .footer-left{color:var(--muted)}
+    footer{margin-top:28px;padding:20px 0;background:transparent}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
+    .contact-list{display:flex;gap:18px;flex-direction:column;color:var(--muted)}
     .socials{display:flex;gap:12px}
-    .socials a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;border:1px solid transparent}
-    .socials a:hover{color:var(--text);border-color:var(--glass-border)}
+    .pill{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
 
     /* Responsive */
     @media (max-width:900px){
-      .hero,.grid-2{grid-template-columns:1fr}
-      .navlinks{display:none}
-      .container{padding:120px 16px}
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      nav ul{gap:8px}
     }
 
-    /* Scroll snap sections */
-    main{scroll-behavior:smooth}
-    section{scroll-margin-top:120px}
-
-    /* small helpers */
-    .chip{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:600;background:linear-gradient(90deg, rgba(123,97,255,0.06), rgba(255,92,124,0.03));color:var(--text)}
-
+    /* small interactive touches */
+    .highlight{background:var(--accent1); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .small-muted{font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
-    <nav class="container" aria-label="Main navigation">
+    <div class="container">
       <div class="brand">
         <div class="logo">QR</div>
         <div>
-          <div style="font-weight:700">Quafiya Rahim</div>
-          <div style="font-size:12px;color:var(--muted)">B.Com • Certified Data Analyst</div>
+          <div style="font-weight:800">Quafiya Rahim</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">B.Com | Certified Data Analyst</div>
         </div>
       </div>
-      <div class="navlinks" id="navlinks">
-        <a href="#about" class="active">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section id="about" class="hero">
-      <div class="card">
-        <h1>I'm Quafiya Rahim</h1>
+  <main>
+    <section class="hero">
+      <div class="about-card">
+        <h1>About</h1>
         <p class="lead">I’m a B.Com graduate and certified Data Analyst with a strong interest in turning raw data into meaningful insights. Skilled in Excel, Power BI, SQL, and Python, I enjoy finding patterns in data that help businesses make smarter decisions. As a fresher, I’m eager to apply my analytical and visualization skills to real-world projects and grow in the field of data analytics.</p>
 
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <span class="chip">Excel</span>
-          <span class="chip">Power BI</span>
-          <span class="chip">SQL</span>
-          <span class="chip">Python</span>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="pill" href="#achievements">Certificates</a>
+        </div>
+
+        <div style="margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+          <div class="card small-muted">
+            <strong>Location</strong>
+            <div class="small-muted">Varanasi, India</div>
+          </div>
+          <div class="card small-muted">
+            <strong>Availability</strong>
+            <div class="small-muted">Open for internships & entry-level roles</div>
+          </div>
         </div>
       </div>
 
-      <aside class="photo-uploader card">
-        <div style="width:100%;display:flex;justify-content:space-between;align-items:center">
-          <strong>Profile Photo</strong>
-          <button class="small-btn" id="removePhotoBtn">Remove</button>
+      <aside class="profile-card">
+        <div class="avatar">QR</div>
+        <div style="text-align:center">
+          <div style="font-weight:800">Quafiya Rahim</div>
+          <div class="small-muted">B.Com | Certified Data Analyst</div>
         </div>
-        <div class="avatar" id="avatar">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><rect width='100%' height='100%' fill='%230b0f1a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%239fb1d4' font-size='28'>Add your photo</text></svg>" alt="avatar placeholder">
+        <div style="width:100%;display:flex;gap:10px;justify-content:center">
+          <a class="btn" href="#contact">Email</a>
+          <a class="pill" href="#skills">Skills</a>
         </div>
-        <input type="file" accept="image/*" id="photoInput" style="display:none">
-        <button class="small-btn" id="uploadBtn">Upload Photo</button>
-        <p class="muted" style="font-size:13px;margin-top:8px">Tip: Use a clear, professional photo (square works best).</p>
       </aside>
     </section>
 
-    <section id="skills">
-      <div class="grid-2">
-        <div>
-          <h2>Soft Skills</h2>
-          <div class="skill-list">
-            <ul>
-              <li>knowledge of built in ETL tools in power query under power BI and also having knowledge of power query nd power pivot ,which acts as a ETL tool inside excel.</li>
-              <li>Knowledge of collection nd organisation of data , finding correlations between analyzed data to spot problems nd initiate preventive measures or solve problems creatively.</li>
-              <li>knowledge of creating joins , complex queries using HAVING , GROUP BY ,etc involving multiple tables .</li>
-              <li>know the concept of website development ,HTML,CSS .</li>
-              <li>know the concept of web analytics (tool google analytics) and Digital analytics .</li>
-              <li>know the concept of Business analysis .</li>
-              <li> know the concept of data security that includes governance , compliance ,global compliance regulations .</li>
-              <li>knowledge of compliance for IT ,cloud , Data Security  that is PCI DSS.</li>
-              <li>know the concept of magecart attackes.</li>
-            </ul>
-          </div>
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <ul class="skills">
+            <li>knowledge of built in ETL tools in power query under power BI and also having knowledge of power query nd power pivot ,which acts as a ETL tool inside excel.</li>
+            <li>Knowledge of collection nd organisation of data , finding correlations between analyzed data to spot problems nd initiate preventive measures or solve problems creatively.</li>
+            <li>knowledge of creating joins , complex queries using HAVING , GROUP BY ,etc involving multiple tables .</li>
+            <li>know the concept of website development ,HTML,CSS .</li>
+            <li>know the concept of web analytics (tool google analytics) and Digital analytics .</li>
+            <li>know the concept of Business analysis .</li>
+            <li> know the concept of data security that includes governance , compliance ,global compliance regulations .</li>
+            <li>knowledge of compliance for IT ,cloud , Data Security  that is PCI DSS.</li>
+            <li>know the concept of magecart attackes.</li>
+          </ul>
+        </div>
 
-          <h2 style="margin-top:18px">Technical Skills</h2>
-          <div class="skill-list">
-            <ul>
-              <li>Microsoft Excel.(including functions ,charts, pivot tables, vlookups, data automation with VBA Macros.)</li>
-              <li>SQL (used database my SQL).</li>
-              <li>Python (numpy, panda ,matplotlib and seaborn) with IDE tool (VS CODE).</li>
-              <li>Power Bi , Looker (visualization tools).</li>
-              <li>Google analytics (tracking website traffics and user behaviour)</li>
-              <li>Jupyter notebook.</li>
-              <li>Git/GitHub (for tracking changes in code and collaborating in projects).</li>
-              <li>AI :- Chatgpt, Gemini, Julius Ai, Deepseek, Black box, Copilot.</li>
-              <li>Concept of Wappalyzer .</li>
-              <li>Cloud platfrom :-AWS</li>
-              <li>Aware of agile framework.</li>
-              <li>Concept of DSA.</li>
-              <li>Aware of kaggle for data collection.</li>
-              <li>Concept of Web scrapping .</li>
-              <li>Aware of survey monkey application for data designing , collection ,analyzing nd visualization.</li>
-              <li>Prompt engineering.</li>
-            </ul>
+        <div class="card">
+          <h3>Technical Skills</h3>
+          <ul class="skills">
+            <li>Microsoft Excel (including functions ,charts, pivot tables, vlookups, data automation with VBA Macros)</li>
+            <li>SQL (used database my SQL)</li>
+            <li>Python (numpy, panda ,matplotlib and seaborn) with IDE tool (VS CODE)</li>
+            <li>Power Bi , Looker (visualization tools)</li>
+            <li>Google analytics (tracking website traffics and user behaviour)</li>
+            <li>Jupyter notebook</li>
+            <li>Git/GitHub (for tracking changes in code and collaborating in projects)</li>
+            <li>AI – Chatgpt, Gemini, Julius Ai, Deepseek, Black box, Copilot</li>
+            <li>Concept of Wappalyzer</li>
+            <li>Cloud platfrom – AWS</li>
+            <li>Aware of agile framework</li>
+            <li>Concept of DSA</li>
+            <li>Aware of kaggle for data collection</li>
+            <li>Concept of Web scrapping</li>
+            <li>Aware of survey monkey application for data designing , collection ,analyzing nd visualization</li>
+            <li>Prompt engineering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <!-- User requested: do not change education portion -->
+      <table class="edu-table">
+        <thead>
+          <tr><th>Qualification</th><th>Institute</th><th>Year</th><th>Percentage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>B.com</td><td>Banaras Hindu University , Varanasi</td><td>2023</td><td>77.60%</td></tr>
+          <tr><td>12th</td><td>Sant Atulanand Convent School , Kiorajpur , Varanasi</td><td>2020</td><td>82.6%</td></tr>
+          <tr><td>10th</td><td>Sant Atulanand Convent School , Gilat bazar  , Varanasi</td><td>2018</td><td>75.5%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="achievements" class="card">
+      <h2>Achievements & Certificates</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="cert-row">
+          <div style="flex:1">
+            <strong>Certificate course in CARRIER ESSENTIALS IN DATA ANALYSIS BY MICROSOFT AND LINKDIN.</strong>
+            <div class="small-muted">(You can upload an image of this certificate using the file chooser.)</div>
+          </div>
+          <div class="file-input">
+            <div class="cert-preview" id="cert1-preview">No image</div>
+            <input id="cert1" type="file" accept="image/*" />
           </div>
         </div>
 
-        <aside>
-          <div class="card">
-            <h2>Quick contacts</h2>
-            <p class="muted">(Edit the details in the HTML to update your real contact number, email and links)</p>
-            <table style="width:100%;margin-top:12px">
-              <tr><td class="muted" style="width:120px">Phone</td><td><a href="tel:+91-0000000000" id="phoneLink" style="color:var(--text);text-decoration:none">+91-0000000000</a></td></tr>
-              <tr><td class="muted">Email</td><td><a href="mailto:youremail@example.com" id="emailLink" style="color:var(--text);text-decoration:none">youremail@example.com</a></td></tr>
-              <tr><td class="muted">GitHub</td><td><a href="https://github.com/your-handle" id="githubLink" target="_blank" style="color:var(--text);text-decoration:none">github.com/your-handle</a></td></tr>
-              <tr><td class="muted">LinkedIn</td><td><a href="https://www.linkedin.com/in/your-handle" id="linkedinLink" target="_blank" style="color:var(--text);text-decoration:none">linkedin.com/in/your-handle</a></td></tr>
-            </table>
-
-            <div style="margin-top:14px;display:flex;gap:8px">
-              <button class="small-btn" id="editContacts">Edit details</button>
-              <button class="small-btn" id="downloadResume">Download Resume</button>
-            </div>
-          </div>
-
-          <div style="height:18px"></div>
-
-          <div class="card">
-            <h2>Other tools</h2>
-            <p class="muted" style="margin:0">Use the following to showcase projects or badges:</p>
-            <ul style="margin-top:10px">
-              <li>Embed Power BI reports (iframe)</li>
-              <li>Link GitHub projects / Jupyter notebooks</li>
-              <li>Upload sample dashboards or PDFs</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="card">
-        <h2>MY EDUCATION</h2>
-        <table class="edu-table">
-          <tr>
-            <td><strong>B.com</strong> | Banaras Hindu University , Varanasi</td>
-            <td style="text-align:right">2023 | 77.60%</td>
-          </tr>
-          <tr>
-            <td><strong>12th</strong> | Sant Atulanand Convent School , Kiorajpur , Varanasi</td>
-            <td style="text-align:right">2020 | 82.6%</td>
-          </tr>
-          <tr>
-            <td><strong>10th</strong> | Sant Atulanand Convent School , Gilat bazar  , Varanasi</td>
-            <td style="text-align:right">2018 | 75.5%</td>
-          </tr>
-        </table>
-      </div>
-    </section>
-
-    <section id="achievements">
-      <div class="card">
-        <h2>My ACHIEVEMENTS</h2>
-        <ul>
-          <li>
-            <strong>Certificate course in CARRIER ESSENTIALS IN DATA ANALYSIS BY MICROSOFT AND LINKDIN.</strong>
-            <div style="margin-top:8px;display:flex;gap:12px;align-items:center">
-              <div style="width:120px;height:80px;border-radius:8px;border:1px dashed var(--glass-border);display:flex;align-items:center;justify-content:center;overflow:hidden" id="cert1preview">Add photo</div>
-              <input type="file" id="cert1" accept="image/*" style="display:none">
-              <button class="small-btn" id="uploadCert1">https://drive.google.com/file/d/1Obd_0hUMp8nT3iqu0T4QXVh6lL9AVnJC/view?usp=drivesdk</button>
-            </div>
-          </li>
-          <li style="margin-top:12px">
+        <div class="cert-row">
+          <div style="flex:1">
             <strong>Certificate course in MS OFFICE basics.</strong>
-            <div style="margin-top:8px;display:flex;gap:12px;align-items:center">
-              <div style="width:120px;height:80px;border-radius:8px;border:1px dashed var(--glass-border);display:flex;align-items:center;justify-content:center;overflow:hidden" id="cert2preview">Add photo</div>
-              <input type="file" id="cert2" accept="image/*" style="display:none">
-              <button class="small-btn" id="uploadCert2">https://drive.google.com/file/d/1meh0PqnQ2c4XK_fxKgIxJH9p72T0P8XL/view?usp=drivesdk</button>
-            </div>
-          </li>
-        </ul>
+            <div class="small-muted">(You can upload an image of this certificate using the file chooser.)</div>
+          </div>
+          <div class="file-input">
+            <div class="cert-preview" id="cert2-preview">No image</div>
+            <input id="cert2" type="file" accept="image/*" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="card">
-        <h2>Contact</h2>
-        <p class="muted">Phone, email and professional links are shown to the right in the Quick contacts card. You can also use the links in the footer below.</p>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <div style="display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:800">Get in touch</div>
+          <div class="small-muted">Replace the placeholders below with your real contact information.</div>
+          <div style="margin-top:12px;color:var(--muted)">
+            <div><strong>Contact no.:</strong> +91-XXXXXXXXXX</div>
+            <div><strong>Mail id:</strong> email@example.com</div>
+            <div><strong>GitHub:</strong> https://github.com/your-username</div>
+            <div><strong>LinkedIn:</strong> https://linkedin.com/in/your-profile</div>
+          </div>
+        </div>
+
+        <div style="min-width:200px;display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+          <a class="btn" href="mailto:email@example.com">Send Email</a>
+          <a class="pill" href="https://github.com/your-username" target="_blank">GitHub</a>
+          <a class="pill" href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <div class="footer-left">
-        <div style="font-weight:700">Quafiya Rahim</div>
-        <div class="muted" style="font-size:13px">B.Com • Certified Data Analyst</div>
-      </div>
-      <div class="socials">
-        <a href="tel:+91-0000000000">Phone</a>
-        <a href="mailto:quafiya9119@gmail.com">Email</a>
-        <a href="https://github.com/your-handle" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/quafiya-rahim-9b0201315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
   </main>
 
+  <footer>
+    <div class="footer-inner">
+      <div class="small-muted">© <span id="year"></span> Quafiya Rahim</div>
+      <div class="contact-list">
+        <div><strong>Contact no.:</strong> +91-XXXXXXXXXX</div>
+        <div><strong>Mail id:</strong> email@example.com</div>
+        <div class="socials">
+          <a class="pill" href="https://github.com/your-username" target="_blank">GitHub</a>
+          <a class="pill" href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Navigation behaviour
-    document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click', function(e){
-      document.querySelectorAll('.navlinks a').forEach(x=>x.classList.remove('active'));
-      this.classList.add('active');
-    }))
+    // Fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Photo upload
-    const photoInput = document.getElementById('photoInput');
-    const uploadBtn = document.getElementById('uploadBtn');
-    const avatar = document.getElementById('avatar');
-    const removeBtn = document.getElementById('removePhotoBtn');
+    // Smooth scroll + active nav
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
 
-    uploadBtn.addEventListener('click', ()=>photoInput.click());
-    photoInput.addEventListener('change', e=>{
-      const file = e.target.files[0];
-      if(!file) return;
-      const reader = new FileReader();
-      reader.onload = function(ev){
-        avatar.innerHTML = '';
-        const img = document.createElement('img');
-        img.src = ev.target.result;
-        avatar.appendChild(img);
-      }
-      reader.readAsDataURL(file);
-    });
-    removeBtn.addEventListener('click', ()=>{
-      avatar.innerHTML = '<img src="data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'600\'><rect width=\'100%\' height=\'100%\' fill=\'%230b0f1a\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%239fb1d4\' font-size=\'28\'>Add your photo</text></svg>';
-      photoInput.value = '';
-    });
-
-    // Certificates upload
-    function setupCert(buttonId, inputId, previewId){
-      const btn = document.getElementById(buttonId);
-      const input = document.getElementById(inputId);
-      const preview = document.getElementById(previewId);
-      btn.addEventListener('click', ()=>input.click());
-      input.addEventListener('change', e=>{
-        const file = e.target.files[0]; if(!file) return; const reader=new FileReader();
-        reader.onload = function(ev){ preview.innerHTML = '';
-          const img=document.createElement('img'); img.src=ev.target.result; img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover'; preview.appendChild(img);
+    // Certificate preview
+    function previewFile(inputId, previewId){
+      const input=document.getElementById(inputId);
+      const preview=document.getElementById(previewId);
+      input.addEventListener('change', ()=>{
+        const file=input.files[0];
+        if(!file) { preview.textContent='No image'; return }
+        const reader=new FileReader();
+        reader.onload = function(e){
+          preview.style.backgroundImage = `url('${e.target.result}')`;
+          preview.style.backgroundSize='cover';
+          preview.style.color='transparent';
+          preview.textContent='';
         }
         reader.readAsDataURL(file);
       })
     }
-    setupCert('uploadCert1','cert1','cert1preview');
-    setupCert('uploadCert2','cert2','cert2preview');
-
-    // Edit quick contacts (simple inline prompt edit)
-    document.getElementById('editContacts').addEventListener('click', ()=>{
-      const phone = prompt('Enter phone (with country code):', document.getElementById('phoneLink').textContent) || document.getElementById('phoneLink').textContent;
-      const email = prompt('Enter email:', document.getElementById('emailLink').textContent) || document.getElementById('emailLink').textContent;
-      const gh = prompt('Enter GitHub URL:', document.getElementById('githubLink').href) || document.getElementById('githubLink').href;
-      const ln = prompt('Enter LinkedIn URL:', document.getElementById('linkedinLink').href) || document.getElementById('linkedinLink').href;
-      document.getElementById('phoneLink').textContent = phone; document.getElementById('phoneLink').href = 'tel:'+phone.replace(/\s/g,'');
-      document.getElementById('emailLink').textContent = email; document.getElementById('emailLink').href = 'mailto:'+email;
-      document.getElementById('githubLink').textContent = gh.replace(/^https?:\/\//,''); document.getElementById('githubLink').href = gh;
-      document.getElementById('linkedinLink').textContent = ln.replace(/^https?:\/\//,''); document.getElementById('linkedinLink').href = ln;
-      // update footer links
-      document.querySelector('footer .socials a[href^="tel:"]').textContent = phone;
-      document.querySelector('footer .socials a[href^="tel:"]').href = 'tel:'+phone.replace(/\s/g,'');
-      document.querySelector('footer .socials a[href^="mailto:"]').textContent = email;
-      document.querySelector('footer .socials a[href^="mailto:"]').href = 'mailto:'+email;
-      const footerLinks = document.querySelectorAll('footer .socials a');
-      footerLinks[2].href = gh; footerLinks[3].href = ln;
-    });
-
-    // Download Resume - simple PDF print of page (user can print to PDF)
-    document.getElementById('downloadResume').addEventListener('click', ()=>{
-      window.print();
-    });
-
+    previewFile('cert1','cert1-preview');
+    previewFile('cert2','cert2-preview');
   </script>
 </body>
 </html>
 
+   
+     
+      
+           
+
+        
+         
+     
+         
+             
+     
+    
+
+   
   
  
    
