@@ -13,18 +13,28 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2735);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
             color: #ffffff;
             line-height: 1.7;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* Navigation */
         header {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             padding: 15px 40px;
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(8px);
         }
 
         nav {
@@ -70,12 +80,30 @@
             margin-bottom: 10px;
         }
 
+        /* Resume Button */
+        .resume-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: linear-gradient(135deg, #00e5ff, #00bcd4);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: transform 0.2s ease;
+        }
+
+        .resume-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* Projects */
         .project-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 22px;
             margin-bottom: 25px;
-            border-radius: 12px;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
         }
 
         .project-card h3 {
@@ -95,13 +123,22 @@
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
             text-align: center;
         }
 
+        footer a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         footer p {
-            margin: 6px 0;
+            margin: 8px 0;
         }
     </style>
 </head>
@@ -128,6 +165,11 @@
         Skilled in Excel, Power BI, SQL, and Python. She enjoys finding patterns in data that help businesses make smarter decisions.
         As a fresher, she is eager to apply my analytical and visualization skills to real-world projects and grow in the field of data analytics.
     </p>
+
+    <!-- Resume Download -->
+    <a class="resume-btn" href="Quafiya_Rahim_Data_Analyst_Resume.pdf" download>
+        ⬇ Download Resume
+    </a>
 </section>
 
 <section id="skills">
@@ -154,8 +196,8 @@
     <h2>Certifications</h2>
     <ul>
         <li>DATA ANALYST | Durga Software Solutions ,Ameerpet, Hyderabad</li>
-        <li>CARRIER ESSENTIALS IN DATA ANALYSIS | BY MICROSOFT AND LINKDIN.</li>
-        <li>MS OFFICE basics.</li>
+        <li>CARRIER ESSENTIALS IN DATA ANALYSIS | Microsoft and Linkdin.</li>
+        <li>MS OFFICE Basics.</li>
     </ul>
 </section>
 
@@ -169,9 +211,7 @@
             customer behaviour, pricing strategies, and operational efficiency. The dashboard provides actionable insights
             to support data-driven business decisions and improve overall performance.
         </p>
-        <a href="https://github.com/quafiya-rahim/E-Commerce-Sales-And-Customer-Analytics-Dashboard" target="_blank">
-            View on GitHub
-        </a>
+        <a href="https://github.com/quafiya-rahim/E-Commerce-Sales-And-Customer-Analytics-Dashboard" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
@@ -181,9 +221,7 @@
             into healthcare facilities, facility chains, dialysis station usage, and payment modes, along with the impact of
             discounts and revenue reductions.
         </p>
-        <a href="https://github.com/quafiya-rahim/Healthcare-Analytics-Dashboard" target="_blank">
-            View on GitHub
-        </a>
+        <a href="https://github.com/quafiya-rahim/Healthcare-Analytics-Dashboard" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
@@ -193,22 +231,28 @@
             salary impact and tenure patterns. The dashboard helps identify key attrition drivers and support data-driven HR
             decision making.
         </p>
-        <a href="https://github.com/quafiya-rahim/HR-Analytics-Dashboard" target="_blank">
-            View on GitHub
-        </a>
+        <a href="https://github.com/quafiya-rahim/HR-Analytics-Dashboard" target="_blank">View on GitHub</a>
     </div>
 </section>
 
 <footer>
-    <p>📞 Contact No: +91-8542935540</p>
-    <p>📧 Email: quafiya9119@gmail.com</p>
-    <p>🔗 LinkedIn: https://www.linkedin.com/in/quafiya-rahim/</p>
+    <p>📞 <a href="tel:+91XXXXXXXXXX">+91-8542935540</a></p>
+    <p>📧 <a href="mailto:yourmail@email.com">quafiya9119@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/quafiya-rahim/" target="_blank">LinkedIn Profile</a></p>
 </footer>
 
 </body>
 </html>
 
-    
+
+       
+         
+          
+          
+
+        
+
+       
     
       
 
