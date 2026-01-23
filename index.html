@@ -1,293 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quafiya Rahim — Data Analyst Portfolio</title>
-  <style>
-    :root{
-      --bg1: #0f1724; /* deep navy */
-      --bg2: #111827; /* near black */
-      --accent1: linear-gradient(90deg,#6ee7b7,#60a5fa,#a78bfa); /* colorful gradient */
-      --card: rgba(255,255,255,0.04);
-      --glass: rgba(255,255,255,0.03);
-      --text: #e6eef8;
-      --muted: #9fb0c8;
-      --accent-color: #7c3aed;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background: radial-gradient(circle at 10% 10%, rgba(124,58,237,0.14), transparent 10%), linear-gradient(180deg,var(--bg1),var(--bg2)); color:var(--text);}
+    <meta charset="UTF-8">
+    <title>Quafiya Rahim | Data Analyst Portfolio</title>
 
-    /* Header / Nav */
-    header{position:fixed;top:0;left:0;right:0;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-bottom:1px solid rgba(255,255,255,0.03); z-index:1000}
-    .container{max-width:1100px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:46px;height:46px;border-radius:10px;background:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:0.6px}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-    nav a:hover, nav a.active{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    main{padding-top:92px;padding-bottom:80px}
-    .hero{max-width:1100px;margin:24px auto;padding:28px;border-radius:16px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.6);display:grid;grid-template-columns:1fr 360px;gap:24px}
-    .hero .about-card{padding:22px}
-    h1{margin:0 0 8px 0;font-size:26px}
-    p.lead{margin:0;color:var(--muted);line-height:1.55}
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            line-height: 1.7;
+        }
 
-    .profile-card{border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));display:flex;flex-direction:column;gap:14px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:14px;background:linear-gradient(180deg,#6ee7b7,#60a5fa);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#022;}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent-color);color:white;text-decoration:none;font-weight:700}
+        /* Navigation */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    /* Sections */
-    section{max-width:1100px;margin:18px auto;padding:20px;border-radius:12px;background:var(--card);}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .card{padding:18px;border-radius:12px;background:var(--glass)}
-    h2{margin:0 0 12px 0}
-    ul.skills{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
-    ul.skills li{margin-bottom:8px}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Education table */
-    .edu-table{width:100%;border-collapse:collapse;color:var(--muted)}
-    .edu-table th,.edu-table td{padding:8px 10px;text-align:left}
-    .edu-table tr{border-bottom:1px solid rgba(255,255,255,0.02)}
+        nav h1 {
+            color: #00e5ff;
+        }
 
-    /* Achievements with image upload */
-    .cert-row{display:flex;gap:12px;align-items:center}
-    .cert-preview{width:96px;height:64px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);}
-    .file-input{display:flex;flex-direction:column;gap:8px}
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-    /* Footer */
-    footer{margin-top:28px;padding:20px 0;background:transparent}
-    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
-    .contact-list{display:flex;gap:18px;flex-direction:column;color:var(--muted)}
-    .socials{display:flex;gap:12px}
-    .pill{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
+        nav ul li {
+            margin-left: 25px;
+        }
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .grid{grid-template-columns:1fr}
-      nav ul{gap:8px}
-    }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    /* small interactive touches */
-    .highlight{background:var(--accent1); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .small-muted{font-size:13px;color:var(--muted)}
-  </style>
+        nav ul li a:hover {
+            color: #00e5ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 80px;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #00e5ff;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+        .project-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+
+        .project-card h3 {
+            color: #ffd369;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 25px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <div class="brand">
-        <div class="logo">QR</div>
-        <div>
-          <div style="font-weight:800">Quafiya Rahim</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">B.Com | Certified Data Analyst</div>
-        </div>
-      </div>
-      <nav>
+
+<header>
+    <nav>
+        <h1>Quafiya Rahim</h1>
         <ul>
-          <li><a href="#about" class="active">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+    </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="about-card">
-        <h1>About</h1>
-        <p class="lead">I’m a B.Com graduate and certified Data Analyst with a strong interest in turning raw data into meaningful insights. Skilled in Excel, Power BI, SQL, and Python, I enjoy finding patterns in data that help businesses make smarter decisions. As a fresher, I’m eager to apply my analytical and visualization skills to real-world projects and grow in the field of data analytics.</p>
-
-        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn" href="#contact">Contact Me</a>
-          <a class="pill" href="#achievements">Certificates</a>
-        </div>
-
-        <div style="margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
-          <div class="card small-muted">
-            <strong>Location</strong>
-            <div class="small-muted">Varanasi, India</div>
-          </div>
-          <div class="card small-muted">
-            <strong>Availability</strong>
-            <div class="small-muted">Open for internships & entry-level roles</div>
-          </div>
-        </div>
-      </div>
-
-      <aside class="profile-card">
-        <div class="avatar">QR</div>
-        <div style="text-align:center">
-          <div style="font-weight:800">Quafiya Rahim</div>
-          <div class="small-muted">B.Com | Certified Data Analyst</div>
-        </div>
-        <div style="width:100%;display:flex;gap:10px;justify-content:center">
-          <a class="btn" href="#contact">Email</a>
-          <a class="pill" href="#skills">Skills</a>
-        </div>
-      </aside>
-    </section>
-
-    <section id="skills" class="card">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Soft Skills</h3>
-          <ul class="skills">
-            <li>knowledge of built in ETL tools in power query under power BI and also having knowledge of power query nd power pivot ,which acts as a ETL tool inside excel.</li>
-            <li>Knowledge of collection nd organisation of data , finding correlations between analyzed data to spot problems nd initiate preventive measures or solve problems creatively.</li>
-            <li>knowledge of creating joins , complex queries using HAVING , GROUP BY ,etc involving multiple tables .</li>
-            <li>know the concept of website development ,HTML,CSS .</li>
-            <li>know the concept of web analytics (tool google analytics) and Digital analytics .</li>
-            <li>know the concept of Business analysis .</li>
-            <li> know the concept of data security that includes governance , compliance ,global compliance regulations .</li>
-            <li>knowledge of compliance for IT ,cloud , Data Security  that is PCI DSS.</li>
-            <li>know the concept of magecart attackes.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Technical Skills</h3>
-          <ul class="skills">
-            <li>Microsoft Excel (including functions ,charts, pivot tables, vlookups, data automation with VBA Macros)</li>
-            <li>SQL (used database my SQL)</li>
-            <li>Python (numpy, panda ,matplotlib and seaborn) with IDE tool (VS CODE)</li>
-            <li>Power Bi , Looker (visualization tools)</li>
-            <li>Google analytics (tracking website traffics and user behaviour)</li>
-            <li>Jupyter notebook</li>
-            <li>Git/GitHub (for tracking changes in code and collaborating in projects)</li>
-            <li>AI – Chatgpt, Gemini, Julius Ai, Deepseek, Black box, Copilot</li>
-            <li>Concept of Wappalyzer</li>
-            <li>Cloud platfrom – AWS</li>
-            <li>Aware of agile framework</li>
-            <li>Concept of DSA</li>
-            <li>Aware of kaggle for data collection</li>
-            <li>Concept of Web scrapping</li>
-            <li>Aware of survey monkey application for data designing , collection ,analyzing nd visualization</li>
-            <li>Prompt engineering</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <!-- User requested: do not change education portion -->
-      <table class="edu-table">
-        <thead>
-          <tr><th>Qualification</th><th>Institute</th><th>Year</th><th>Percentage</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>B.com</td><td>Banaras Hindu University , Varanasi</td><td>2023</td><td>77.60%</td></tr>
-          <tr><td>12th</td><td>Sant Atulanand Convent School , Kiorajpur , Varanasi</td><td>2020</td><td>82.6%</td></tr>
-          <tr><td>10th</td><td>Sant Atulanand Convent School , Gilat bazar  , Varanasi</td><td>2018</td><td>75.5%</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-  <section id="achievements" class="card">
-  <h2>Achievements & Certificates</h2>
-  <div style="display:flex; flex-direction:column; gap:12px">
-
-    <div class="cert-row">
-      <div style="flex:1">
-        <strong>Certificate course in CARRIER ESSENTIALS IN DATA ANALYSIS BY MICROSOFT AND LINKEDIN.</strong>
-        <div class="small-muted">Successfully completed a professional certification focused on data analysis fundamentals and career skills.</div>
-      </div>
-    </div>
-
-    <div class="cert-row">
-      <div style="flex:1">
-        <strong>Certificate course in MS OFFICE BASICS.</strong>
-        <div class="small-muted">Gained essential skills in Microsoft Office tools including Word, Excel, and PowerPoint.</div>
-      </div>
-    </div>
-
-  </div>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        A B.Com graduate and Aspired Data Analyst with a strong interest in turning raw data into meaningful insights.
+        Skilled in Excel, Power BI, SQL, and Python. She enjoys finding patterns in data that help businesses make smarter decisions.
+        As a fresher, she is eager to apply my analytical and visualization skills to real-world projects and grow in the field of data analytics.
+    </p>
 </section>
 
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Microsoft Excel, SQL (used database MySQL), Python with IDE tool (VS CODE), Jupyter notebook.</li>
+        <li>Power BI and it's ETL tool (power query).</li>
+        <li>Git/GitHub</li>
+        <li>Cloud platform :- AWS</li>
+        <li>Prompt engineering.</li>
+    </ul>
+</section>
 
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>B.com | Banaras Hindu University , Varanasi | 2023 | 8.21 CGPA</li>
+        <li>12th | Sant Atulanand Convent School , Kiorajpur , Varanasi | 2020 | 82.6%</li>
+        <li>10th | Sant Atulanand Convent School , Gilat bazar , Varanasi | 2018 | 75.5%</li>
+    </ul>
+</section>
 
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <div style="display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap">
-        <div>
-          <div style="font-weight:800">Get in touch</div>
-          <div class="small-muted">Replace the placeholders below with your real contact information.</div>
-          <div style="margin-top:12px;color:var(--muted)">
-            <div><strong>Contact no.:</strong> +91-9876543210</div>
-            <div><strong>Mail id:</strong> quafiya9119@gmail.com</div>
-            <div><strong>GitHub:</strong> <a href="https://github.com/quafiya-rahim" target="_blank">github.com/quafiyarahim</a></div>
-            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/quafiya-rahim-9b0201315" target="_blank">linkedin.com/in/quafiyarahim</a></div>
-          </div>
-        </div>
+<section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        <li>DATA ANALYST | Durga Software Solutions ,Ameerpet, Hyderabad</li>
+        <li>CARRIER ESSENTIALS IN DATA ANALYSIS | BY MICROSOFT AND LINKDIN.</li>
+        <li>MS OFFICE basics.</li>
+    </ul>
+</section>
 
-        <div style="min-width:200px;display:flex;flex-direction:column;gap:10px;align-items:flex-end">
-          <a class="btn" href="mailto:email@example.com">Send Email</a>
-          <a class="pill" href="https://github.com/your-username" target="_blank">GitHub</a>
-          <a class="pill" href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-    </section>
+<section id="projects">
+    <h2>Projects</h2>
 
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="small-muted">© <span id="year"></span> Quafiya Rahim</div>
-      <div class="contact-list">
-        <div><strong>Contact no.:</strong> +91-9876543210</div>
-        <div><strong>Mail id:</strong> quafiya9119@gmail.com</div>
-        <div class="socials">
-          <a class="pill" href="https://github.com/quafiya-rahim" target="_blank">GitHub</a>
-          <a class="pill" href="https://www.linkedin.com/in/quafiya-rahim-9b0201315" target="_blank">LinkedIn</a>
-
-        </div>
-      </div>
+    <div class="project-card">
+        <h3>E-COMMERCE SALES AND CUSTOMER ANALYTICS DASHBOARD</h3>
+        <p>
+            Developed an E- commerce Sales and Customer Analytics Dashboard using power bi to analyse sales performance,
+            customer behaviour, pricing strategies, and operational efficiency. The dashboard provides actionable insights
+            to support data-driven business decisions and improve overall performance.
+        </p>
+        <a href="https://github.com/quafiya-rahim/E-Commerce-Sales-And-Customer-Analytics-Dashboard" target="_blank">
+            View on GitHub
+        </a>
     </div>
-  </footer>
 
-  <script>
-    // Fill year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <div class="project-card">
+        <h3>HEALTHCARE ANALYTICS DASHBOARD</h3>
+        <p>
+            This project analyses patient data related to kidney diseases, focusing on dialysis patients. It provides insights
+            into healthcare facilities, facility chains, dialysis station usage, and payment modes, along with the impact of
+            discounts and revenue reductions.
+        </p>
+        <a href="https://github.com/quafiya-rahim/Healthcare-Analytics-Dashboard" target="_blank">
+            View on GitHub
+        </a>
+    </div>
 
-    // Smooth scroll + active nav
-    document.querySelectorAll('nav a').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
-        a.classList.add('active');
-        const target=document.querySelector(a.getAttribute('href'));
-        if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-      })
-    })
+    <div class="project-card">
+        <h3>HR ANALYTICS DASHBOARD</h3>
+        <p>
+            Developed an HR Analytics Dashboard using analytical skills to analyse employee attrition, workforce demographics,
+            salary impact and tenure patterns. The dashboard helps identify key attrition drivers and support data-driven HR
+            decision making.
+        </p>
+        <a href="https://github.com/quafiya-rahim/HR-Analytics-Dashboard" target="_blank">
+            View on GitHub
+        </a>
+    </div>
+</section>
 
-    // Certificate preview
-    function previewFile(inputId, previewId){
-      const input=document.getElementById(inputId);
-      const preview=document.getElementById(previewId);
-      input.addEventListener('change', ()=>{
-        const file=input.files[0];
-        if(!file) { preview.textContent='No image'; return }
-        const reader=new FileReader();
-        reader.onload = function(e){
-          preview.style.backgroundImage = `url('${e.target.result}')`;
-          preview.style.backgroundSize='cover';
-          preview.style.color='transparent';
-          preview.textContent='';
-        }
-        reader.readAsDataURL(file);
-      })
-    }
-    previewFile('cert1','cert1-preview');
-    previewFile('cert2','cert2-preview');
-  </script>
+<footer>
+    <p>📞 Contact No: +91-8542935540</p>
+    <p>📧 Email: quafiya9119@gmail.com</p>
+    <p>🔗 LinkedIn: https://www.linkedin.com/in/quafiya-rahim/</p>
+</footer>
+
 </body>
 </html>
+
+    
+    
+      
+
+       
+           
+            
+      
+
+  
+  
 
    
      
