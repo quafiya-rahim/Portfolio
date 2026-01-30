@@ -13,132 +13,97 @@
         }
 
         body {
-            min-height: 100vh;
-            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2735);
-            background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
-            color: #ffffff;
-            line-height: 1.7;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f5f5f5;
+            line-height: 1.6;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Navigation */
         header {
-            background: rgba(0, 0, 0, 0.75);
-            padding: 15px 40px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 55px 20px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
         }
 
-        nav h1 {
-            color: #00e5ff;
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
         }
 
-        nav ul {
-            display: flex;
+        .btn {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 28px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            margin: 30px auto;
+            padding: 25px;
+            width: 85%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #ffd369;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-top: 15px;
+            color: #4dd0e1;
+        }
+
+        .card ul {
             list-style: none;
         }
 
-        nav ul li {
-            margin-left: 25px;
+        .card ul li {
+            margin-bottom: 8px;
         }
 
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: #00e5ff;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 80px;
-        }
-
-        section h2 {
-            margin-bottom: 20px;
-            color: #00e5ff;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Resume Button */
-        .resume-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            background: linear-gradient(135deg, #00e5ff, #00bcd4);
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: transform 0.2s ease;
-        }
-
-        .resume-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Projects */
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 22px;
-            margin-bottom: 25px;
-            border-radius: 14px;
-            backdrop-filter: blur(6px);
-        }
-
-        .project-card h3 {
-            color: #ffd369;
-        }
-
-        .project-card a {
-            display: inline-block;
-            margin-top: 10px;
+        .card a {
             color: #00e5ff;
             text-decoration: none;
         }
 
-        .project-card a:hover {
+        .card a:hover {
             text-decoration: underline;
         }
 
-        /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 30px;
+            background: #000;
             text-align: center;
-        }
-
-        footer a {
-            color: #00e5ff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            padding: 30px 20px;
+            margin-top: 50px;
         }
 
         footer p {
             margin: 8px 0;
+        }
+
+        footer a {
+            color: #00e5ff;
         }
     </style>
 </head>
@@ -146,106 +111,120 @@
 <body>
 
 <header>
-    <nav>
-        <h1>Quafiya Rahim</h1>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+    <h1>QUAFIYA RAHIM</h1>
+    <p>Entry-Level Data Analyst</p>
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
 </header>
 
-<section id="about">
+<section class="card">
     <h2>About Me</h2>
     <p>
-        A B.Com graduate and Aspired Data Analyst with a strong interest in turning raw data into meaningful insights.
+        A B.Com graduate and Entry-Level Data Analyst with a strong interest in turning raw data into meaningful insights.
         Skilled in Excel, Power BI, SQL, and Python. She enjoys finding patterns in data that help businesses make smarter decisions.
         As a fresher, she is eager to apply my analytical and visualization skills to real-world projects and grow in the field of data analytics.
     </p>
-
-    <!-- Resume Download -->
-    <a class="resume-btn" href="Quafiya_Rahim_Resume.pdf" download>
-        ⬇ Download Resume
-    </a>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
+<section class="card">
+    <h2>Technical Skills</h2>
     <ul>
-        <li>Microsoft Excel, SQL (used database MySQL), Python with IDE tool (VS CODE), Jupyter notebook.</li>
-        <li>Power BI and it's ETL tool (power query).</li>
-        <li>Git/GitHub</li>
-        <li>Cloud platform :- AWS</li>
-        <li>Prompt engineering.</li>
+        <li>Microsoft Excel (Pivot Tables, Power Query, Lookups)</li>
+        <li>SQL</li>
+        <li>Python (Pandas, NumPy, Matplotlib,Seborn)</li>
+        <li>Data Validation</li>
+        <li>Exploratory Data Analysis (EDA)</li>
+        <li>ETL - Data cleaning and Transformation</li>
+        <li>Power BI(Data Visualization & Reporting)</li>
+        <li>Relational Database (MySQL)</li>
+        <li>AWS (S3, EC2 – Basics)</li>
+        <li>Git & GitHub</li>
     </ul>
 </section>
 
-<section id="education">
+<section class="card">
+    <h2>Non-Technical Skills</h2>
+    <ul>
+        <li>Analytical Thinking (basic data interpretation)</li>
+        <li>Problem Solving (using data & logic)</li>
+        <li>Attention to Detail (data checking & accuracy)</li>
+        <li>Basic Business Understanding</li>
+        <li>Communication (presenting insights clearly)</li>
+    </ul>
+</section>
+
+<section class="card">
     <h2>Education</h2>
-    <ul>
-        <li>B.com | Banaras Hindu University , Varanasi | 2023 | 8.21 CGPA</li>
-        <li>12th | Sant Atulanand Convent School , Kiorajpur , Varanasi | 2020 | 82.6%</li>
-        <li>10th | Sant Atulanand Convent School , Gilat bazar , Varanasi | 2018 | 75.5%</li>
-    </ul>
+    <p>B.com | Banaras Hindu University , Varanasi |  2023 | 8.21 CGPA</p>
+    <p>12th | Sant Atulanand Convent School , Kiorajpur , Varanasi  | 2020 | 82.6%</p>
+    <p>10th | Sant Atulanand Convent School , Gilat bazar  , Varanasi | 2018 | 75.5%</p>
 </section>
 
-<section id="certifications">
+<section class="card">
     <h2>Certifications</h2>
     <ul>
-        <li>DATA ANALYST | Durga Software Solutions ,Ameerpet, Hyderabad</li>
-        <li>CARRIER ESSENTIALS IN DATA ANALYSIS | Microsoft and Linkdin.</li>
-        <li>MS OFFICE Basics.</li>
+        <li>
+            DATA ANALYST | Durga Software Solutions ,Ameerpet, Hyderabad
+            — <a href="#" target="_blank">View Certificate</a>
+        </li>
+        <li>
+            CARRIER ESSENTIALS IN DATA ANALYSIS |BY MICROSOFT AND LINKDIN
+            — <a href="#" target="_blank">View Certificate</a>
+        </li>
     </ul>
 </section>
 
-<section id="projects">
+<section class="card">
     <h2>Projects</h2>
 
-    <div class="project-card">
-        <h3>E-COMMERCE SALES AND CUSTOMER ANALYTICS DASHBOARD</h3>
-        <p>
-            Developed an E- commerce Sales and Customer Analytics Dashboard using power bi to analyse sales performance,
-            customer behaviour, pricing strategies, and operational efficiency. The dashboard provides actionable insights
-            to support data-driven business decisions and improve overall performance.
-        </p>
-        <a href="https://github.com/quafiya-rahim/E-Commerce-Sales-And-Customer-Analytics-Dashboard" target="_blank">View on GitHub</a>
-    </div>
+    <h3>E-COMMERCE SALES AND CUSTOMER ANALYTICS DASHBOARD</h3>
+    <p>
+        Developed an E- commerce Sales and Customer Analytics Dashboard using power bi to analyse sales performance,
+        customer behaviour, pricing strategies, and operational efficiency.
+        The dashboard provides actionable insights to support data-driven business decisions and improve overall performance.
+    </p>
+    <a href="https://github.com/quafiya-rahim/E-Commerce-Sales-And-Customer-Analytics-Dashboard" target="_blank">GitHub Link</a>
 
-    <div class="project-card">
-        <h3>HEALTHCARE ANALYTICS DASHBOARD</h3>
-        <p>
-            This project analyses patient data related to kidney diseases, focusing on dialysis patients. It provides insights
-            into healthcare facilities, facility chains, dialysis station usage, and payment modes, along with the impact of
-            discounts and revenue reductions.
-        </p>
-        <a href="https://github.com/quafiya-rahim/Healthcare-Analytics-Dashboard" target="_blank">View on GitHub</a>
-    </div>
+    <h3>HEALTHCARE ANALYTICS DASHBOARD</h3>
+    <p>
+        This project analyses patient data related to kidney diseases, focusing on dialysis patients.
+        It provides insights into healthcare facilities, facility chains, dialysis station usage, and payment modes,
+        along with the impact of discounts and revenue reductions.
+    </p>
+    <a href="https://github.com/quafiya-rahim/Healthcare-Analytics-Dashboard" target="_blank">GitHub Link</a>
 
-    <div class="project-card">
-        <h3>HR ANALYTICS DASHBOARD</h3>
-        <p>
-            Developed an HR Analytics Dashboard using analytical skills to analyse employee attrition, workforce demographics,
-            salary impact and tenure patterns. The dashboard helps identify key attrition drivers and support data-driven HR
-            decision making.
-        </p>
-        <a href="https://github.com/quafiya-rahim/HR-Analytics-Dashboard" target="_blank">View on GitHub</a>
-    </div>
+    <h3>HR ANALYTICS DASHBOARD</h3>
+    <p>
+        Developed an HR Analytics Dashboard using analytical skills to analyse employee attrition ,
+        workforce demographics ,salary impact and tenure patterns.
+        The dashboard helps identify key attrition drivers and support
+        data - driven HR decision making.
+    </p>
+    <a href="https://github.com/quafiya-rahim/HR-Analytics-Dashboard" target="_blank">GitHub Link</a>
 </section>
 
 <footer>
-    <p>📞 <a href="tel:+91XXXXXXXXXX">+91-8542935540</a></p>
-    <p>📧 <a href="mailto:yourmail@email.com">quafiya9119@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/quafiya-rahim/" target="_blank">LinkedIn Profile</a></p>
+    <p>📞 Contact No: XXXXXXXXXX</p>
+    <p>📧 Mail ID: yourmail@email.com</p>
+    <p>🔗 LinkedIn: <a href="#" target="_blank">LinkedIn Profile</a></p>
 </footer>
 
 </body>
 </html>
 
 
+        
        
+        
+            
+
+      
+      
+       
+           
+        
+
+      
+    
          
           
           
